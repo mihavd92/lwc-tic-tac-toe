@@ -1,0 +1,31 @@
+<template>
+  <section class="container">
+    <h1 class="title">Tic Tac Toe</h1>
+    <template if:true={gameStarted}>
+      <table class="tic-tac-toe">
+        <tr>
+          <td data-index="0" onclick={handleCellClick}></td>
+          <td data-index="1" onclick={handleCellClick}></td>
+          <td data-index="2" onclick={handleCellClick}></td>
+        </tr>
+        <tr>
+          <td data-index="3" onclick={handleCellClick}></td>
+          <td data-index="4" onclick={handleCellClick}></td>
+          <td data-index="5" onclick={handleCellClick}></td>
+        </tr>
+        <tr>
+          <td data-index="6" onclick={handleCellClick}></td>
+          <td data-index="7" onclick={handleCellClick}></td>
+          <td data-index="8" onclick={handleCellClick}></td>
+        </tr>
+      </table>
+      <p>{message}</p>
+      <button onclick={reset}>Reset</button>
+    </template>
+    <template if:false={gameStarted}>
+      <p>Choose your side - X or O</p>
+      <button onclick={startGame} value="X">Play as X</button>
+      <button onclick={startGame} value="O">Play as O</button>
+    </template>
+  </section>
+</template>
